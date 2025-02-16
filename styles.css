@@ -1,26 +1,3 @@
-/* สำหรับหน้าจอขนาดเล็ก เช่น มือถือ */
-@media only screen and (max-width: 600px) {
-    body {
-        background-color: lightblue;
-    }
-    .container {
-        padding: 10px;
-    }
-}
-
-/* สำหรับหน้าจอขนาดกลาง เช่น แท็บเล็ต */
-@media only screen and (max-width: 1024px) {
-    body {
-        background-color: lightgreen;
-    }
-}
-.container {
-    display: flex;
-    flex-wrap: wrap;
-}
-.item {
-    flex: 1 1 100%; /* จัดให้แต่ละ item อยู่ในแถวเดียวกันเมื่อหน้าจอเล็ก */
-}
 /* General styles */
 body {
     margin: 0;
@@ -52,6 +29,10 @@ body {
 .logo {
     height: 60px;
     margin: 0;
+}
+
+.hamburger{
+    display: none;
 }
 
 /* Sidebar left for menu under logo */
@@ -194,4 +175,36 @@ video {
     color: #555;
     font-size: 16px;
 }
+}
+@media screen and (max-width: 768px) {
+    .sidebar-left {
+        width: 200px;
+    }
+    .container {
+        margin-left: 200px;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .sidebar-left {
+        transform: translateX(-100%);
+        width: 250px;
+        position: fixed;
+        transition: transform 0.3s ease-in-out;
+    }
+    .container {
+        margin-left: 0;
+    }
+    .hamburger {
+        display: block;
+        position: absolute;
+        left: 20px;
+        background-color: #753abe;
+        border: none;
+        font-size: 28px;
+        color: white;
+    }
+    .sidebar-left.active {
+        transform: translateX(0);
+    }
 }
