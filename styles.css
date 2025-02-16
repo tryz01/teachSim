@@ -1,3 +1,10 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.item {
+    flex: 1 1 100%; /* จัดให้แต่ละ item อยู่ในแถวเดียวกันเมื่อหน้าจอเล็ก */
+}
 /* General styles */
 body {
     margin: 0;
